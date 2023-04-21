@@ -1,0 +1,19 @@
+[GLOBAL]
+pants_version = "2.16.0rc0"
+pythonpath = ["%(buildroot)s/pants-plugins"]
+
+backend_packages = [
+  "pants.backend.python",
+  "pants.backend.plugin_development",
+  "taplo",
+]
+
+[python]
+interpreter_constraints = ["==3.9.*"]
+enable_resolves = true
+
+[python.resolves]
+pants-plugins = "pants-plugins/lock.txt"
+
+[source]
+marker_filenames = ["pyproject.toml"]
